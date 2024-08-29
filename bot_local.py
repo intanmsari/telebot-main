@@ -25,17 +25,17 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     # TO DO: chat_id, full_name, message_text
-    chat_id = ___
+    chat_id = message.chat.id
 
-    first_name = ___
-    last_name = ___
+    first_name = message.from_user.first_name
+    last_name = message.from_user.last_name
     full_name = f'{first_name} {last_name}' if last_name is not None else first_name
     
     # TO DO: subtitute text with variable
     with open('template_text/welcome.txt', mode='r', encoding='utf-8') as f:
         content = f.read()
         temp = Template(content)
-        welcome = temp.substitute(___ = ___)
+        welcome = temp.substitute(full_name = "Algoritma")
 
     bot.send_message(
         chat_id,
