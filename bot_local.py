@@ -46,7 +46,7 @@ def send_welcome(message):
 @bot.message_handler(commands=['about'])
 def send_about(message):
     # TO DO: chat_id
-    chat_id = ___
+    chat_id = "test"
 
     # TO DO: subtitute text with static values
     with open('template_text/about.txt', mode='r', encoding='utf-8') as f:
