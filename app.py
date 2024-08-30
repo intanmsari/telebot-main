@@ -1,3 +1,8 @@
+#log
+import logging
+logging.basicConfig(level=logging.ERROR,
+                    format='%(actime)s - %(name)s - %(levelname)s - %(message)s')
+
 # SETUP: LOAD bot_local.py
 from bot_local import *
 
