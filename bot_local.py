@@ -10,7 +10,7 @@ import emoji
 from gtts import gTTS
 
 ## for data analysis
-import pandas as pd
+import pandas as pd 
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
@@ -35,7 +35,7 @@ def send_welcome(message):
     with open('template_text/welcome.txt', mode='r', encoding='utf-8') as f:
         content = f.read()
         temp = Template(content)
-        welcome = temp.substitute(full_name = "Algoritma")
+        welcome = temp.substitute(FULL_NAME = "Algoritma")
 
     bot.send_message(
         chat_id,
@@ -46,16 +46,16 @@ def send_welcome(message):
 @bot.message_handler(commands=['about'])
 def send_about(message):
     # TO DO: chat_id
-    chat_id = "test"
+    chat_id = message.chat.id
 
     # TO DO: subtitute text with static values
     with open('template_text/about.txt', mode='r', encoding='utf-8') as f:
         content = f.read()
         temp = Template(content)
         about = temp.substitute(
-            ___ = ___,
-            ___ = ___,
-            ___ = ___
+            STUDENT_NAME = "Intan M Sari",
+            BATCH_ACADEMY = "ZEUS",
+            GITHUB_REPO_LINK = "https://github.com/intanmsari/telebot-main.git"
         )
 
     bot.send_message(
