@@ -226,5 +226,5 @@ def echo_all(message):
         
     bot.reply_to(message, default)
 
-if __name__ == "__main__":
-    bot.polling()
+# if __name__ == "__main__":
+    # bot.polling()
